@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Question</title>
+</head>
+<body style="display: flex;flex-direction: row;flex-flow: row wrap;gap:5vw;justify-content: center;">
+	
+	
+	{%for item in printObjlist%}
+
+
+<div class='card' style="
+		background-color: whitesmoke;
+		border-radius: 7px;
+		border-color: transparent;
+		height: 160vh;
+		width: 24vw;
+		gap:2vh;
+		margin-top: 12px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		/*justify-content: center;*/
+		"> 
+		<img src="/media/{{item.Image}}" style="height:20vh">
+		<form action='qcreate' method='post' style="display: flex;border-color: transparent; gap:2vh;flex-direction: column; align-items: center;"> {% csrf_token %}
+		<input type='text' style="margin-top: 5px;border-color: transparent;font-size: larger;" value='{{item}}' id='bookname' name='bookname' readonly>
+		<div><label for="q1">Question 1</label><input type="text" name="q1" id="q1"></div>
+		<div><label for="a1">Answer 1</label><input type="text" name="a1" id="a1"></div>
+		<div><label for="q2">Question 2</label><input type="text" name="q2" id="q2"></div>
+		<div><label for="a2">Answer 2</label><input type="text" name="a2" id="a2"></div>
+		<div><label for="q3">Question 3</label><input type="text" name="q3" id="q3"></div>
+		<div><label for="a3">Answer 3</label><input type="text" name="a3" id="a3"></div>
+		<div><label for="q4">Question 4</label><input type="text" name="q4" id="q4"></div>
+		<div><label for="a4">Answer 4</label><input type="text" name="a4" id="a4"></div>
+		<div><label for="q5">Question 5</label><input type="text" name="q5" id="q5"></div>
+		<div><label for="a5">Answer 5</label><input type="text" name="a5" id="a5"></div>
+		<div><label for="q6">Question 6</label><input type="text" name="q6" id="q6"></div>
+		<div><label for="a6">Answer 6</label><input type="text" name="a6" id="a6"></div>
+		<div><label for="q7">Question 7</label><input type="text" name="q7" id="q7"></div>
+		<div><label for="a7">Answer 7</label><input type="text" name="a7" id="a7"></div>
+		<div><label for="q8">Question 8</label><input type="text" name="q8" id="q8"></div>
+		<div><label for="a8">Answer 8</label><input type="text" name="a8" id="a8"></div>
+		<div><label for="q9">Question 9</label><input type="text" name="q9" id="q9"></div>
+		<div><label for="a9">Answer 9</label><input type="text" name="a9" id="a9"></div>
+		<div><label for="q10">Question 10</label><input type="text" name="q10" id="q10"></div>
+		<div><label for="a10">Answer 10<label><input type="text" name="a10" id="a10"></div>
+		<button type='submit' style='background-color:greenyellow;height:6vh;width:16vw;margin-top:5vh'>Submit</button>
+		</form>
+		</div>
+		{%endfor%}
+</body>
+</html>

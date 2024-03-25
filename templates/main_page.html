@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>{% load static %}
+<head>
+	<title>Main Page</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: white;
+			overflow-x: hidden;
+		}
+		#profile-main-div{
+			position: fixed;
+			z-index: 1;
+			top :0;
+			height: 12vh;
+			width: 100%;
+			background-color: #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			border : 0.2px solid black;
+			border-top-width: 0px;
+			border-left-width: 0px;
+			border-right-width: 0px;	
+		}
+		#logo-profile-img{
+			height: 12vh;
+		}
+		#main-profile-part{
+			display: flex;
+			align-items: center;
+			gap : 2.5vw;
+		}
+		.link{
+			text-decoration: none;
+			color: black;
+			font-family: cursive;
+		}
+		#profile-contact-number{
+			border: 2px solid orange;
+			padding: 12px 12px;
+			font-family: monospace;
+			color: yellowgreen;}
+	body{
+		background-color: white
+	}
+	</style>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+	<div id="profile-main-div">
+		<div id="promotion-icons">
+			<a href="https://facebook.com" class="link"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://twitter.com" class="link"><i class="fa-brands fa-twitter"></i></a>
+			<a href="https://instagram.com" class="link"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://youtube.com" class="link"><i class="fa-brands fa-youtube"></i></a>
+		</div>
+		<div id="main-profile-part">
+			<a href="/" class="link">HOME</a>
+			<a href="/ABOUT" class="link">ABOUT</a>
+			<a href="/REGISTER" class="link">REGISTER</a>
+			<img src="{% static 'logo.png'%}" id="logo-profile-img">
+			<a href="" class="link">ADMIN</a>
+			<a href="" class="link">CONTACT</a>
+		</div>
+		<div id="profile-contact-number">+91 6299 155 115</div>
+	</div>
+		
+	<main style='position:absolute;top:25vh;left:0;height:100%;width:100vw;display:flex;gap:3.2vw;flex-flow: row wrap;justify-content: center;'>
+
+		{% for item in books %}
+		{% comment %} {{books.item.Title}} {% endcomment %}
+		{% comment %} {{item.Category}} {% endcomment %}
+		<form method="post" action="/book">
+			{% csrf_token %}
+		<div class='card' style="
+		background-color: white;
+		border-radius: 7px;
+		border-color: transparent;
+		height: 49vh;
+		width: 24vw;
+		margin-top: 12px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		/*justify-content: center;*/
+		"> 
+		<img src="/media/{{item.Image}}" style="height:20vh">
+		<input type="" name="hidden_bookname" id="hidden_bookname" value="{{item}}" style="visibility: hidden;">
+		<h3 style="margin-top: 5px;"><button type="submit" style="background-color: white;width: 16vw;height: 1.75vw;border-color: transparent;text-decoration: underline;margin-bottom:5px;">{{item.Title}}</a></h3> <br>
+		<h4 style="margin-top: -10px;">{{item.Category}}</h4> <br>
+		<h5 style="margin-top: -10px;">Sold By {{item.Uploader}}</h5> <br>
+		<h3 style="margin-top: -10px;">🌟{{item.BookPrice}}</h3>
+			
+		</div>
+		</form>
+		{% endfor %}
+		<div class='card' style="
+		background-color: whitesmoke;
+		border-radius: 7px;
+		border-color: transparent;
+		height: 40vh;
+		width: 24vw;
+		margin-top: 12px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		"> 
+		<button style="background-color: transparent;border-color: transparent;font-size: xx-large;"><a href="/newbook" style="text-decoration: none;color: black;">+</a></button>
+		<h4 style="margin-top: -10px;font-size: large;">Add a Book</h4>
+		</div>
+		<div class='card' style="
+		background-color: whitesmoke;
+		border-radius: 7px;
+		border-color: transparent;
+		height: 40vh;
+		width: 24vw;
+		margin-top: 12px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		"> 
+		<button style="background-color: transparent;border-color: transparent;font-size: xx-large;"><a href="/questions" style="text-decoration: none;color: black;">+</a></button>
+		<h4 style="margin-top: -10px;font-size: large;">Add Questions</h4>
+		</div>
+		{% comment %} {{books.0.Title}} {% endcomment %}
+	</main>
+<div style="display: flex;align-items: center;justify-content: center;position: absolute;top:17.5vh;display: none;left: 17.5vw;height: 65vh;width: 65vw;" onclick="this.style.display = 'none'" id="bigimage" >
+	<img src="/media/{{img_url}}" style="height: 65vh;width: 65vw;position: absolute;" id="bigimage" >
+	<h4 style="position: absolute;left: 32.5vw;top: 35vh;color: red;text-decoration: underline;opacity: 0.7">Close</h4>
+	</div>
+	
+</body>
+</html>

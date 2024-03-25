@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>{% load static %}
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+	
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#profile-main-div{
+			position: fixed;
+			top :0;
+			height: 12vh;
+			width: 100%;
+			background-color: #ffffff;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			z-index: 1;
+		}
+		#home_bg{
+			height: 100vh;
+			width: 100%
+		}
+		.link{
+			text-decoration: none;
+			color: black;
+			font-family: cursive;
+		}
+		#profile-contact-number{
+			border: 2px solid orange;
+			padding: 12px 12px;
+			font-family: monospace;
+			color: yellowgreen;
+		}
+		#logo-profile-img{
+			height: 12vh;
+		}
+		#main-profile-part{
+			display: flex;
+			align-items: center;
+			gap : 2.5vw;
+		}
+		#login-area{
+			background-color: #ADCFFD;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;	
+			gap :10vw;
+		}
+		body{
+			height: 100vh;
+		}
+		#seller{
+			height: 120vh;
+			width: 100%;
+			background-color: skyblue;
+			/*background : url({% static "login-img.jpg" %}) 15% no-repeat ;/**/
+			background-size: 75vw;*/
+			padding-bottom: 15vh;
+			display: none;
+			position: absolute;
+			top: 90vh;
+			left: 0px;
+		}
+		#login-area input {
+    margin-left: 3.4vw;
+    font-size: medium;
+    font-family: cursive;
+	}
+	#login-area form button {
+    	margin-left: 1.4vw;
+    	font-size: medium;
+    	font-family: cursive;
+    	background-color: greenyellow;
+    	border-color: transparent;
+		}
+
+
+		#borrower{
+			height: 100vh;
+			width: 100%;
+			background-color: skyblue;
+			/*background : url({% static "login-img.jpg" %}) 5% no-repeat;*/
+			/*background-size: 175vh;*/
+			display: none;
+			position: absolute;
+			top: 100vh;
+			left: 0;
+		}
+		body{
+			overflow-x: hidden;
+		}
+		.button-loginas{
+			min-height: 6vh;
+			min-width: 6vw;`
+			background-color: #A7A6E6;
+			border-radius: 8px;
+			border-color: transparent;
+		}
+
+		#borrower-img{
+			height: 30vh;
+			border-radius: 8px;
+		}	
+		#seller-img{
+			height: 30vh;
+			border-radius: 8px;
+		}	
+		#login-area {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    /*flex-direction: column;*/
+    gap: 12px;
+
+}
+
+#login-area div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 0vh;*/
+}
+
+
+#login-area div form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 6.5px;
+    height: 70	vh;
+    width: 37vw;
+    padding : 12vh 12vh;
+}
+
+#login-area div div{
+     margin-top: 12vh; 
+
+}
+
+#login-area div h2 {
+    font-family: 'Rubik Doodle Shadow', 'lucida', 'Sans Serif';
+    margin-left: 40%; 
+}
+
+#login-area div form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-area label {
+    margin-left: 5vw;
+    font-size: larger;
+    font-family: cursive;
+}
+#login-link{
+
+
+			border: 2px solid skyblue;
+			padding: 12px 12px;
+			font-weight: bolder;
+			font-family: monospace;
+			color: brown;
+}
+html{
+
+    scroll-behavior: smooth;
+
+}
+
+			</style>
+		
+		
+</head>
+<body>
+<main>
+	<div id="profile-main-div">
+		<div id="promotion-icons">
+			<a href="https://facebook.com" class="link"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://twitter.com" class="link"><i class="fa-brands fa-twitter"></i></a>
+			<a href="https://instagram.com" class="link"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://youtube.com" class="link"><i class="fa-brands fa-youtube"></i></a>
+		</div>
+		<div id="main-profile-part">
+			<a href="" class="link">HOME</a>
+			<a href="" class="link">ABOUT</a>
+			<a href="" class="link">REGISTER</a>
+			<img src="{% static 'logo.png'%}" id="logo-profile-img">
+			<a class="link" id="login-link" href="#login-area">LOGIN</a>
+			<a href="" class="link">ADMIN</a>
+			<a href="" class="link">CONTACT</a>
+		</div>
+		<div id="profile-contact-number">+91 6299 155 115</div>
+
+	</div>
+	<div id="bg-main-div">
+		<img src="{% static 'home_bg.jpg' %}" id="home_bg">
+	</div>
+		<div id="login-area" name='login-area'>
+		<button class="button-loginas" onclick="document.getElementById('seller').style.display = 'block'"><img src="{% static 'seller.jpg'%}" id="seller-img">
+		<br>Login as Seller
+		</button>
+		<button class="button-loginas" onclick="document.getElementById('borrower').style.display = 'block'"><img src="{% static 'borrower.jpg'%}" id="borrower-img">
+			<br>Login as Borrower
+		</button>
+		<div id="seller" style="display: none;">
+			<div>
+				
+			<form method="post" action="/main" > {% csrf_token %}
+				<br><br><br>
+			<h1>Seller</h1>
+			<span style="display: inline;">
+				
+			<label for="FullName" style="background-color: #92C7CF"> Full name : </label>
+			<input type="text" name="FullName" id="FullName">
+			</span>
+			<span style="display: inline;">
+				
+			<label for="ShopID"  style="background-color: #92C7CF"> ShopID : </label>
+			<input type="text" name="ShopID" id="ShopID">
+			</span>
+
+			<span style="display: inline;">
+				
+			<label for="Password" style="background-color: #92C7CF"> Password : </label>
+			<input type="text" name="Password" id="Password">
+			</span>
+			<button type="submit" style="background-color: #92C7CF" id="s1">Submit</button>
+	
+	</form>
+			<button class='cancel-btn' onclick="document.getElementById('seller').style.display = 'none'" style="height: 5vh;width: 5vw;border-color: transparent;background-color: orange;margin-left: 10%">Cancel</button>
+			</div>
+		</div>
+		<div id="borrower" style="display: none;">
+		<div>
+			<form method="post" action="/main"> {% csrf_token %}
+			
+			<h2 style="position: relative;left: -19vw;margin-top:100px;background-color: skyblue">Borrower</h2>
+			<span style="display: inline;">
+				
+			<label for="FullNameS" style="background-color: #92C7CF"> Full name : </label>
+			<input type="text" name="FullNameS" id="FullNameS">
+			</span>
+			<span style="display: inline;">
+				
+			<label for="StudentID" style="background-color: #92C7CF"> StudentID : </label>
+			<input type="text" name="StudentID" id="StudentID">
+			</span>
+			<span style="display: inline;" style="background-color: #92C7CF">
+				
+			<label for="PasswordS" style="background-color: #92C7CF"> Password : </label>
+			<input type="text" name="PasswordS" id="PasswordS">
+			</span>
+			<button type="submit" style="background-color: #92C7CF;height: 6vh;width: 6vw" id="s2">Submit</button>
+			</form>
+			<button class="cancel-btn" onclick="document.getElementById('borrower').style.display = 'none'" style="height: 5vh;width: 5vw;border-color: transparent;background-color: orange;margin-left: 10%">Cancel</button>
+		</div>
+		
+			</div>
+	</div>
+		</div>
+	</div>	
+</div>
+</body>
+</html>

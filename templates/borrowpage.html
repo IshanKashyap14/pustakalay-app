@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{bookname}}</title>
+	<style type="text/css">
+		#bookpage_body{
+
+display:flex;
+{% comment %} align-items: center; {% endcomment %}
+justify-content: center;
+margin-left : 25%;
+flex-direction: column;
+background-color: orange;
+gap:5vh;
+		}
+		#bookpage_body img{
+			position : relative;
+			left : 10%;
+			height : 50vh;
+		}
+	</style>
+</head>
+<body id="bookpage_body">
+
+
+<div><img src="/media/{{item.Image}}"></div>
+<div> Book : {{item.Title}}</div>
+<div> Category : {{item.Category}}</div>
+<div> Uploader : {{item.Uploader}} </div>
+
+
+{%if IsBorrowed == True and BorrowedBook == item.Title%}
+<form method="post" action="/readbook"> {%csrf_token%}
+<button>Continue to the book</button>
+</form>
+{%endif%}
+{%if IsBorrowed == True and BorrowedBook != item.Title%}
+<h1>Alredy Borrowed Something</h1>	
+{%endif%}
+{%if IsBorrowed == False%}
+
+
+<form method="post" action="/payment"> {%csrf_token%}
+<button>Borrow The book</button>
+</form> 
+{%endif%}  You have : {{POINTS}} points {{BorrowedBook}}
+</body>
+</html>

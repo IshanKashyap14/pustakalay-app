@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>{%load static%}
+	<title>{%block title%}Welcome{%endblock%}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+	{% block othercss%} {%endblock%}
+</head>
+<body>
+
+</html>
+<div class="profile-bar" >
+	{% block profilecontent%}	
+	<img src="/media/{{img_url}}" class="profile-img" onclick="document.getElementById('bigimage').style.display = 'block'">
+	<h3 class="profile-username">{{username}}</h3>
+	<h4 style="margin-right: 12px">🌟1</h4>
+	<h4 style="margin-right: 12px">📕15</h4>
+	<h4 style="margin-right: 12px">🤑100000</h4>
+	<h4 style="margin-right: 12px">✔95</h4>
+	<h3 class="profile-username" style="position: absolute;left: 5vw;color: whitesmoke">LivingLibrary - Reader ko mile discount, Seller kare money count</h3>
+	<img src="/static/images/libraryicon.png" class="profile-img" style="position: absolute;left: 10px;" >
+	{% endblock %}
+	</div>
+{%block otherbody%}{%endblock%}
+
+</body>

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Rubik+Dirt&family=Rubik+Doodle+Shadow&display=swap');
+
+
+body{
+    background-color: orange;
+    overflow: hidden;
+}
+
+.maincontent{
+    width: 40vw;
+    height: 90vh;
+    /* margin: 10vh 30vw; */
+    position: absolute;
+    top: 5vh;
+    left: 30vw;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 6vh;
+}
+
+.maincontent h1{
+    font-family: 'Rubik Dirt','Lucida','Sans Serif';
+    font-weight: 250;
+    margin-left: 25%;
+}
+
+.bookinput{
+font-family: cursive;
+border-color: ghostwhite;
+border: 0.1px solid gray;
+}
+
+.maincontent div{
+    margin-left: 12%;
+}
+
+.booklabel{
+    font-family: 'Madimi One','Lucida','Sans Serif';
+    font-size: larger;
+}
+
+.maincontent button{
+    background-color: greenyellow;
+    height: 6vh;
+    width: 10vw;
+    margin-left: 22%;
+    border-color: transparent;
+}
+

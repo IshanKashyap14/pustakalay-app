@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{Book.title}}</title>
+	<style type="text/css">
+		#bookpage_body{
+
+display:flex;
+{% comment %} align-items: center; {% endcomment %}
+justify-content: center;
+margin-left : 25%;
+flex-direction: column;
+background-color: greenyellow;
+gap:5vh;
+		}
+		#bookpage_body img{
+			position : relative;
+			left : 10%;
+			height : 50vh;
+		}
+	</style>
+</head>
+<body id="bookpage_body">
+
+{% for item in books%}
+<div><img src="/media/{{item.Image}}"></div>
+<div> Book : {{item}}</div>
+<div> Category : {{item.Category}}</div>
+<div> Uploader : {{item.Uploader}} </div>
+
+<div>Question1 : {{q.question1}} <br> Answer : {{q.answer1}}</div>
+<div>Question2 : {{q.question2}} <br> Answer : {{q.answer2}}</div>
+<div>Question3 : {{q.question3}} <br> Answer : {{q.answer3}}</div>
+<div>Question4 : {{q.question4}} <br> Answer : {{q.answer4}}</div>
+<div>Question5 : {{q.question5}} <br> Answer : {{q.answer5}}</div>
+<div>Question6 : {{q.question6}} <br> Answer : {{q.answer6}}</div>
+<div>Question7 : {{q.question7}} <br> Answer : {{q.answer7}}</div>
+<div>Question8 : {{q.question8}} <br> Answer : {{q.answer8}}</div>
+<div>Question9 : {{q.question9}} <br> Answer : {{q.answer9}}</div>
+<div>Question10 : {{q.question10}} <br> Answer : {{q.answer10}}</div>
+
+
+
+	{%endfor%}
+</body>
+</html>

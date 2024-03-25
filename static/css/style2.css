@@ -1,0 +1,32 @@
+/* main_page */
+.profile-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-direction: row-reverse;
+    }
+    
+.profile-img{
+    border-radius: 60px;
+    height: 6vh;
+    width: 6vh;  
+    margin-right: 10px;
+}
+
+.profile-username{
+font-family: cursive;
+}
+
+#big{
+    position: absolute;
+    margin:17.5vh 17.5vw;
+    left: 17.5vw;
+    height: 65vh;
+    width: 65vw;
+}

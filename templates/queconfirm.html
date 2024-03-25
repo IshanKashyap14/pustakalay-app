@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop ID confirmation</title>
+	<style type="text/css">
+		body{
+			background-color: aqua;
+
+		}
+		.container{
+			height: 80vh;
+			width: 50vw;
+			margin: 10vh 25vw;
+			background-color: white;
+			display: flex;
+			align-items: center;
+			/*justify-content: center;*/
+			gap: 7.5vw;
+			flex-direction: column;
+		}
+
+		.container h1{
+			font-family: cursive;
+		}
+
+	</style>
+</head>
+<body>
+<form action="/questions" method="post"> {% csrf_token %}
+}
+	
+<div class="container">
+	<div><h1>Confirmation needed to view questions!!!</h1></div>
+	<div>
+	<label for="shopid">Enter Your ShopID</label>
+	<input type="text" name="shopid" id="shopid" required>
+	<button>Done</button>
+	</div>
+</form>
+
+</div>
+</body>
+</html>
